@@ -1,1 +1,9 @@
 @import 'reset.css';
+
+:root {
+  --purple: #551c2e;
+}
+
+.navMenuTop {
+  background-color: var(--purple);
+}

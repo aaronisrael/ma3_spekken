@@ -1,17 +1,20 @@
 <header>
   <nav>
-    <ul>
-      <li><a href="index.php">Home</a></li>
-      <li><a href="index.php?page=agenda">Agenda</a></li>
-      <li><a href="index.php?page=over-spekken">Over spekken</a></li>
-      <li><a href="index.php?page=contact">Contact</a></li>
-    </ul>
-    <ul>
-      <li><a href="index.php?page=agenda">Alles</a></li>
-      <li><a href="index.php?page=agenda&amp;month=12">December</a></li>
-      <li><a href="index.php?page=agenda&amp;month=01">Januari</a></li>
-      <li><a href="index.php?page=agenda&amp;month=04">April</a></li>
-    </ul>
+    <div class="navMenuTop">
+      <img src="../assets/img/logo.svg" alt="">
+      <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="index.php?page=agenda">Agenda</a></li>
+        <li><a href="index.php?page=over-spekken">Over spekken</a></li>
+        <li><a href="index.php?page=contact">Contact</a></li>
+      </ul>
+      <ul>
+        <li><a href="index.php?page=agenda">Alles</a></li>
+        <li><a href="index.php?page=agenda&amp;month=12">December</a></li>
+        <li><a href="index.php?page=agenda&amp;month=01">Januari</a></li>
+        <li><a href="index.php?page=agenda&amp;month=04">April</a></li>
+      </ul>
+    </div>
     <ul>
       <li><a href="index.php?page=agenda&amp;tag=kindertheater">kindertheater</a></li>
       <li><a href="index.php?page=agenda&amp;tag=jeugdtheater">jeugdtheater</a></li>
