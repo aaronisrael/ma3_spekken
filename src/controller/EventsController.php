@@ -118,28 +118,30 @@ class EventsController extends Controller {
       );
     }
 
-    if(!empty($_GET['month'])) {
-      if($_GET['month'] == 12 ){
+    if(!empty($_GET['periode'])) {
+      if($_GET['periode'] == 1 ){
         $conditions[] = array(
           'field' => 'start',
           'comparator' => '>=',
-          'value' => '2017-' . $_GET['month'] . '-01 00:00:00'
+          'value' => '2017-12-01 00:00:00'
         );
         $conditions[] = array(
           'field' => 'start',
           'comparator' => '<',
-          'value' => '2017-' . ($_GET['month']+1) . '-01 00:00:00'
+          'value' => '2018-02-01 00:00:00'
         );
-      } else {
+      }
+      if($_GET['periode'] == 2 )
+      {
         $conditions[] = array(
           'field' => 'start',
           'comparator' => '>=',
-          'value' => '2018-' . $_GET['month'] . '-01 00:00:00'
+          'value' => '2018-4-01 00:00:00'
         );
         $conditions[] = array(
           'field' => 'start',
           'comparator' => '<',
-          'value' => '2018-' . ($_GET['month']+1) . '-01 00:00:00'
+          'value' => '2018-5-01 00:00:00'
         );
       }
     }

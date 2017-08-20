@@ -1,0 +1,44 @@
+@font-face {
+  font-family: raleway;
+  src:
+    url(raleway/raleway-bold-webfont.woff2) format('woff2'),
+    url(raleway/raleway-bold-webfont.woff) format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: raleway;
+  src:
+    url(raleway/raleway-extrabold-webfont.woff2) format('woff2'),
+    url(raleway/raleway-extrabold-webfont.woff) format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: roboto;
+  src:
+    url(roboto/roboto-regular-webfont.woff2) format('woff2'),
+    url(roboto/roboto-regular-webfont.woff2) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: roboto;
+  src:
+    url(roboto/roboto-medium-webfont.woff2) format('woff2'),
+    url(roboto/roboto-medium-webfont.woff2) format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: roboto;
+  src:
+    url(roboto/roboto-bold-webfont.woff2) format('woff2'),
+    url(roboto/roboto-bold-webfont.woff2) format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
