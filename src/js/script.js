@@ -27,6 +27,9 @@ const convertToDueTone = (color1, color2) => {
 
 if (window.location.href.indexOf(`agenda`) > - 1) {
   subNavHighlight();
+}
+
+if (window.location.href.indexOf(`agenda`) > - 1 || window.location.href.indexOf(`index`) > - 1) {
   convertToDueTone([67, 196, 162], [74, 33, 49]);
 }
 
@@ -57,7 +60,7 @@ const generateShape = numberShapes => {
   for (let i = 0;i < numberShapes;i ++) {
     const svgns = `http://www.w3.org/2000/svg`;
     const xlinkns = `http://www.w3.org/1999/xlink`;
-    const $header = document.querySelector(`.headerImage`);
+    const $header = document.querySelector(`.svgElements`);
     const use = document.createElementNS(svgns, `use`);
     const svg = document.createElementNS(svgns, `svg`);
     let shape;
@@ -82,9 +85,9 @@ const generateShape = numberShapes => {
     }
     use.setAttributeNS(xlinkns, `href`, shape);
     svg.appendChild(use);
-    svg.classList.add(`svgElements`);
+    svg.classList.add(`svgElement`);
     svg.style.fill = color;
-    svg.style.top = Math.floor((Math.random() * 430) + 100);
+    svg.style.top = Math.floor((Math.random() * 380) + 100);
     svg.style.left = Math.floor((Math.random() * window.innerWidth - 30) + 1);
     svg.style.transform = `rotateZ(${Math.floor((Math.random() * 360) + 1)}deg)`;
     svg.setAttribute(`width`, `30`);
@@ -94,3 +97,14 @@ const generateShape = numberShapes => {
 };
 
 randomShapes();
+
+const bg = document.querySelector(`.svgElements`);
+const windowWidth = window.innerWidth / 5;
+const windowHeight = window.innerHeight / 5;
+
+bg.addEventListener(`mousemove`, e => {
+  const mouseX = e.clientX / windowWidth;
+  const mouseY = e.clientY / windowHeight;
+  console.log(bg);
+  bg.style.transform = `translate3D(-${mouseX}%, -${mouseY}%, 0)`;
+});

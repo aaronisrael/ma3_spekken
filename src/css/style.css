@@ -12,6 +12,17 @@ html {
   --flex: {
     display: flex;
   }
+  --title: {
+    font-family: Raleway;
+    font-weight: 800;
+    color: var(--green);
+    font-size: 6rem;
+  }
+}
+
+.centerContainer {
+  width: 1280px;
+  margin: 0 auto;
 }
 
 .navMenu {
@@ -28,8 +39,6 @@ html {
 
 .navMenuTopContent {
   @apply --flex;
-  width: 1280px;
-  margin: 0 auto;
 }
 
 .navMenuItems {
@@ -111,11 +120,6 @@ html {
   background-color: var(--green);
 }
 
-.navMenuBottomContent {
-  width: 1280px;
-  margin: 0 auto;
-}
-
 .subNavMenuItems {
   @apply --flex;
   padding: 2rem;
@@ -143,8 +147,6 @@ html {
 
 .navTagsItems {
   @apply --flex;
-  width: 1280px;
-  margin: 0 auto;
   padding-top: 2rem;
 }
 
@@ -169,8 +171,6 @@ html {
 }
 
 .navTagsClear {
-  width: 1280px;
-  margin: 0 auto;
   text-align: right;
 }
 
@@ -186,10 +186,8 @@ html {
   background-color: var(--beige);
 }
 
-main {
+.eventsContainer {
   @apply --flex;
-  width: 1280px;
-  margin: 0 auto;
   flex-flow: row wrap;
   justify-content: flex-start;
 }
@@ -197,6 +195,7 @@ main {
 .duotone {
   width: 100%;
   height: 38rem;
+
 }
 
 svg {
@@ -257,6 +256,7 @@ svg {
   border-image-width: 23px;
   border-image-outset: 0;
   border-image-repeat: stretch stretch;
+  width: 40rem;
 
   &:nth-child(3n-1) {
     margin-left: 3%;
@@ -333,14 +333,16 @@ svg {
   height: 50rem;
 }
 
-.svgElements {
+.svgElement {
   position: absolute;
   z-index: 50;
 }
 
+.svgElements {
+  height: 50rem;
+}
+
 .headerImage__text {
-  width: 1280px;
-  margin: 0 auto;
 
   & h1 {
     font-family: Raleway;
@@ -351,37 +353,143 @@ svg {
     z-index: 99;
     position: absolute;
     top: 22rem;
-    width: 80rem;
     margin-left: 10rem;
+    margin-bottom: 4rem;
     text-decoration: underline;
     text-decoration-color: var(--beige);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 90rem;
+    animation: type 1.5s steps(60, end);
+
+    &:nth-child(2) {
+      margin-top: 7rem;
+      animation: type2 2.7s steps(60, end);
+    }
   }
 }
 
 .tinnenpot {
-  position: relative;
-  overflow: hidden;
-  border: 14px solid transparent;
-  border-image: url(../assets/img/border.png);
-  border-image-slice: 27;
-  border-image-width: 23px;
-  border-image-outset: 0;
-  border-image-repeat: stretch stretch;
-  background-image: url(../assets/img/home_tinnenpot.jpg);
-  background-repeat: no-repeat;
+  @apply --flex;
+  padding-top: 10rem;
+}
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: -4%;
-    left: -4%;
-    width: 108%;
-    height: 108%;
-    border: 14px solid transparent;
-    border-image: url(../assets/img/border.png);
-    border-image-slice: 27;
-    border-image-width: 23px;
-    border-image-outset: 0;
-    border-image-repeat: stretch stretch;
+.tinnenpotImg__border {
+  position: absolute;
+  width: 44rem;
+  height: 30rem;
+  top: 65rem;
+}
+
+.tinnenpotImg__img {
+  margin-left: 2rem;
+}
+
+.tinnenpotImg__swirlTop {
+  position: absolute;
+  transform: rotateZ(130deg);
+  top: 64rem;
+  margin-left: -1rem;
+}
+
+.tinnenpotImg__swirlBottom {
+  position: absolute;
+  transform: rotateZ(130deg);
+  top: 86rem;
+  margin-left: 34rem;
+}
+
+.tinnenpotText {
+  margin-left: 15rem;
+}
+
+.tinnenpotText__title {
+  @apply --title;
+}
+
+.tinnenpotText__description {
+  font-family: Roboto;
+  font-weight: 500;
+  color: var(--purple);
+  font-size: 1.4rem;
+  width: 55rem;
+  margin-top: 1rem;
+}
+
+.tinnenpotText__items li {
+  font-family: Roboto;
+  font-weight: 500;
+  color: var(--purple);
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  padding-left: 4rem;
+  width: 55rem;
+
+  & span {
+    color: var(--green);
   }
+
+  &:nth-child(1) {
+    background: url(../assets/img/bullet_yellow.svg) no-repeat left center;
+    background-size: 2.8%;
+  }
+
+  &:nth-child(2) {
+    background: url(../assets/img/bullet_green.svg) no-repeat left center;
+    background-size: 2.8%;
+  }
+
+  &:nth-child(3) {
+    background: url(../assets/img/bullet_purple.svg) no-repeat left center;
+    background-size: 2.8%;
+  }
+}
+
+.nextEvents__title {
+  @apply --title;
+  margin-top: 10rem;
+}
+
+.nextEvent__items {
+  @apply --flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.nextEvents__link {
+  font-family: Roboto;
+  font-weight: 500;
+  color: var(--green);
+  font-size: 1.8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: url(../assets/img/bullet_green.svg) no-repeat right center;
+  background-size: 5%;
+  padding: 1rem 0;
+  padding-right: 2rem;
+  margin-left: auto;
+}
+
+.nextEvents__linkContainer {
+  text-align: right;
+  margin-bottom: 3rem;
+}
+
+.groundMap {
+  background-color: var(--green);
+}
+
+@keyframes type {
+
+  from { width: 0; }
+}
+
+@keyframes type2 {
+
+  0% { width: 0; }
+
+  50% { width: 0; }
+
+  100% { width: 100; }
 }

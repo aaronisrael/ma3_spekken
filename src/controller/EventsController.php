@@ -12,6 +12,16 @@ class EventsController extends Controller {
   }
 
   public function index() {
+    // $conditions = array();
+    //
+    // $conditions[] = array(
+    //   'field' => 'start',
+    //   'comparator' => '>=',
+    //   'value' => date('Y-m-d H:i')
+    // );
+
+    $upcomingEvents = $this->eventDAO->selectUpcoming();
+    $this->set('upcomingEvents', $upcomingEvents);
   }
 
   public function agenda() {
