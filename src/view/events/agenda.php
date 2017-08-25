@@ -3,7 +3,7 @@
     <div class="navMenu">
       <div class="navMenuTop">
         <div class="centerContainer navMenuTopContent">
-          <img class="navMenuTopContent__logo" src="../assets/img/logo.svg" alt="">
+          <img class="navMenuTopContent__logo" src="assets/img/logo.svg" alt="">
           <ul class="navMenuItems">
             <li><a href="index.php" class="navMenuItems__item">Home</a></li>
             <li><a href="index.php?page=agenda" class="navMenuItems__item--highlighted">Agenda</a></li>
@@ -23,7 +23,6 @@
             <li><a href="index.php?page=agenda" class="subNav1 subNavMenuItems__item">Alles</a></li>
             <li><a href="index.php?page=agenda&amp;periode=1" class="subNav2 subNavMenuItems__item">Kerstvakantie</a></li>
             <li><a href="index.php?page=agenda&amp;periode=2" class="subNav3 subNavMenuItems__item">editie pasen</a></li>
-            <hr />
           </ul>
         </div>
       </div>
@@ -38,9 +37,18 @@
         <li><a href="index.php?page=agenda&amp;tag=circus " class="navTagsItems__item">circus</a></li>
         <li><a href="index.php?page=agenda&amp;tag=danstheater " class="navTagsItems__item">danstheater</a></li>
       </ul>
+      <select class="navTags--mobile" name="forma" onchange="location = this.value;">
+       <option value="index.php?page=agenda">Geen tags</option>
+       <option value="index.php?page=agenda&amp;tag=kindertheater">kindertheater</option>
+       <option value="index.php?page=agenda&amp;tag=figurentheater">figurentheater</option>
+       <option value="index.php?page=agenda&amp;tag=figurentheater">figurentheater</option>
+       <option value="index.php?page=agenda&amp;tag=muziektheater">muziektheater</option>
+       <option value="index.php?page=agenda&amp;tag=kleutertheater">kleutertheater</option>
+       <option value="index.php?page=agenda&amp;tag=circus">circus</option>
+       <option value="index.php?page=agenda&amp;tag=danstheater">danstheater</option>
+      </select>
       <div class="navTagsClear centerContainer">
         <a href="index.php?page=agenda " class="navTagsClear__item">wis tags</a>
-
       </div>
     </div>
   </nav>
@@ -70,10 +78,10 @@
               <p class="event__description"><?php echo $event['description'];?></p>
             </figcaption>
             <div class="event__overlay"></div>
-            <a href="#"></a>
+            <a href="index.php?page=detail&amp;id=<?php echo $event['id']; ?>"></a>
           </figure>
         </div>
-      <? endforeach;?>
+      <?php endforeach;?>
     </div>
   </main>
 </div>

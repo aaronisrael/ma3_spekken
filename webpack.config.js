@@ -3,6 +3,7 @@ const webpack = require(`webpack`);
 
 // change for production build on different server path
 const publicPath = `/`;
+// const publicPath = `/aaron.israel/20162017/ma3/spekken/`;
 
 const config = {
   entry: [
@@ -10,7 +11,7 @@ const config = {
     `./src/js/script.js`
   ],
   output: {
-    path: path.resolve(`./dist`),
+    path: path.resolve(__dirname, `./dist`),
     filename: `js/script.js`,
     publicPath: publicPath
   },

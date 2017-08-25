@@ -71,12 +71,13 @@ class EventDAO extends DAO {
     return $result;
   }
 
-  // public function selectNextEvents() {
-  //   $sql = "SELECT * FROM `ma3_spekken_events` ORDER BY `start` DESC LIMIT 3";
-  //   $stmt = $this->pdo->prepare($sql);
-  //   $stmt->execute();
-  //   return $row = $stmt->fetch(PDO::FETCH_ASSOC);
-  // }
+  public function selectById($id) {
+    $sql = "SELECT * FROM `ma3_spekken_events` WHERE `id` = :id";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
 
   public function selectUpcoming() {
     $sql = "SELECT * FROM `ma3_spekken_events` WHERE `start` >= CURRENT_TIMESTAMP ORDER BY `start` limit 3";

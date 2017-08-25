@@ -51,6 +51,19 @@ const threeRandom = () => {
   return val;
 };
 
+const bottomValue = () => {
+  if (window.innerWidth <= `500`) {
+    return Math.floor((Math.random() * 80) + 100);
+  } else {
+    if (window.innerWidth <= `850`) {
+      return Math.floor((Math.random() * 180) + 100);
+    } else {
+      return Math.floor((Math.random() * 380) + 100);
+    }
+  }
+
+};
+
 const generateShape = numberShapes => {
   const purple =  `#551c2e`;
   const beige =  `#fffce6`;
@@ -87,7 +100,7 @@ const generateShape = numberShapes => {
     svg.appendChild(use);
     svg.classList.add(`svgElement`);
     svg.style.fill = color;
-    svg.style.top = Math.floor((Math.random() * 380) + 100);
+    svg.style.top = bottomValue();
     svg.style.left = Math.floor((Math.random() * window.innerWidth - 30) + 1);
     svg.style.transform = `rotateZ(${Math.floor((Math.random() * 360) + 1)}deg)`;
     svg.setAttribute(`width`, `30`);
@@ -96,15 +109,16 @@ const generateShape = numberShapes => {
   }
 };
 
-randomShapes();
+if (!(window.location.href.indexOf(`agenda`) > - 1)) {
+  randomShapes();
 
-const bg = document.querySelector(`.svgElements`);
-const windowWidth = window.innerWidth / 5;
-const windowHeight = window.innerHeight / 5;
+  const bg = document.querySelector(`.svgElements`);
+  const windowWidth = window.innerWidth / 5;
+  const windowHeight = window.innerHeight / 5;
 
-bg.addEventListener(`mousemove`, e => {
-  const mouseX = e.clientX / windowWidth;
-  const mouseY = e.clientY / windowHeight;
-  console.log(bg);
-  bg.style.transform = `translate3D(-${mouseX}%, -${mouseY}%, 0)`;
-});
+  bg.addEventListener(`mousemove`, e => {
+    const mouseX = e.clientX / windowWidth;
+    const mouseY = e.clientY / windowHeight;
+    bg.style.transform = `translate3D(-${mouseX}%, -${mouseY}%, 0)`;
+  });
+}

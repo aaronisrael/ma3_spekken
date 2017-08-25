@@ -12,13 +12,6 @@ class EventsController extends Controller {
   }
 
   public function index() {
-    // $conditions = array();
-    //
-    // $conditions[] = array(
-    //   'field' => 'start',
-    //   'comparator' => '>=',
-    //   'value' => date('Y-m-d H:i')
-    // );
 
     $upcomingEvents = $this->eventDAO->selectUpcoming();
     $this->set('upcomingEvents', $upcomingEvents);
@@ -158,6 +151,19 @@ class EventsController extends Controller {
 
     $events = $this->eventDAO->search($conditions);
     $this->set('events', $events);
+  }
+
+  public function detail() {
+    if( !isset( $_GET["id"]) ){
+      $this->redirect('index.php?page=agenda');
+    } else {
+      $id = $_GET["id"];
+      $event = $this->eventDAO->selectById( $id );
+      if( !$event ){
+        $this->redirect('index.php?page=agenda');
+      }
+      $this->set('event', $event);
+    }
   }
 
 }
